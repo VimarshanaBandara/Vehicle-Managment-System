@@ -11,7 +11,7 @@
     if(isset($_POST['submit'])){
         $regno= $_POST['vehregno'];
         $type= $_POST['type'];
-        $chesisno= $_POST['vehchesis'];
+       
         $brand= $_POST['vehbrand'];
         $color= $_POST['vehcolor'];
         $regdate= $_POST['vehregdate'];
@@ -25,7 +25,7 @@
         
         //move_uploaded_file($_FILES['file']['tmp_name'],"picture/".$_FILES['file']['name']); 
         $res=false;
-        $insert_query="INSERT INTO `vehicle`(`veh_id`, `veh_reg`, `veh_type`, `chesisno`, `brand`, `veh_color`, `veh_regdate`, `veh_description`, `veh_photo`) VALUES ('','$regno','$type','$chesisno','$brand','$color','$regdate','$description','$photo')";
+        $insert_query="INSERT INTO `vehicle`(`veh_id`, `veh_reg`, `veh_type`, `brand`, `veh_color`, `veh_regdate`, `veh_description`, `veh_photo`) VALUES ('','$regno','$type','$brand','$color','$regdate','$description','$photo')";
         
         $res= mysqli_query($connection,$insert_query);
             
@@ -81,19 +81,6 @@
       </div> 
        <div class="col-md-3">
         
-         <!--
-          <br> 
-          <form action="" method="post" enctype="multipart/form-data">
-              <div class="input-group">
-                  <span class="input-group-addon"><b>Photo</b></span>
-                  <input id="drphoto" type="file" class="form-control" name="file"> 
-
-              </div>
-              <input type="submit" name="psubmit" class="btn btn-success btn-small">
-              
-          </form>
-           
-         -->  
        </div>
         <div class="col-md-6 animated bounceIn"> 
           
@@ -119,11 +106,7 @@
                 </div>
                 <br> 
                 
-                 <div class="input-group">
-                  <span class="input-group-addon"><b>Chesis No</b></span>
-                  <input id="vehchesis" type="text" class="form-control" name="vehchesis" placeholder="Chesis No">
-                </div>
-                <br> 
+              
                 
                 <div class="input-group">
                   <span class="input-group-addon"><b>Brand</b></span>
@@ -160,14 +143,7 @@
                   
                 </div>
                 <br>
-                
-                <!--
-                 <div class="input-group">
-                  <span class="input-group-addon"><b>Photo</b></span>
-                  <input id="vehphoto" type="file" class="form-control" name="file">
-                </div>
-                <br>
-                -->
+            
                 <div class="input-group">
                   <span class="input-group-addon"><b>Photo</b></span>
                   <input  type="file" class="form-control" name="file"> 

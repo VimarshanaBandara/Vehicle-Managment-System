@@ -84,9 +84,7 @@
                       <h4><strong>Type</strong></h4>
                       <p><?php echo $row['veh_type']; ?></p>
                       
-                      <h4><strong>Chesis No</strong></h4>
-                      <p><?php echo $row['chesisno']; ?></p>
-                      
+                     
                       
                       
                       
