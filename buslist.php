@@ -20,6 +20,7 @@
     
 </head> 
 
+
 <body  > 
   
    <div id="myDiv">
@@ -39,8 +40,8 @@
                   </div> 
                   <table class="table">
                     <thead>
-                        <th>Bus Picture</th>
-                        <th>Bus Registration No</th>
+                        <th>Vehicle Picture</th>
+                        <th>Vehicle Registration No</th>
                     </thead>  
 
                     <?php while($row=mysqli_fetch_assoc($res)) {  ?>

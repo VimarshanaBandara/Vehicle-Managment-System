@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2020 at 06:37 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Jul 10, 2021 at 05:37 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `username`, `password`) VALUES
-(1, 'admin', '1sourcecode');
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,6 @@ CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `department` varchar(100) NOT NULL,
   `type` varchar(8) NOT NULL,
   `req_date` varchar(100) NOT NULL,
   `req_time` varchar(100) NOT NULL,
@@ -98,14 +97,8 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `name`, `username`, `department`, `type`, `req_date`, `req_time`, `ret_date`, `ret_time`, `destination`, `pickup_point`, `resons`, `email`, `mobile`, `confirmation`, `veh_reg`, `driverid`, `finished`, `paid`) VALUES
-(47, 'ibtihaj ahmed', 'fahad', 'CSE', 'car', '05/01/2018', '7 : 19 AM', '05/02/2018', '7 : 19 AM', 'Katakhali', 'Ruet Gate', 'Education', 'fahad@gmail.com', 19398134, 1, 'ga-259723', 20, 1, 1),
-(48, 'ibtihaj ahmed', 'fahad', 'CSE', 'car', '05/01/2018', '7 : 22 AM', '05/02/2018', '7 : 22 AM', 'dd', 'dd', 'dd', 'fahad@gmail.com', 19398134, 1, 'cho- 301294', 20, 1, 1),
-(49, 'ibtihaj ahmed', 'fahad', 'CSE', 'car', '05/24/2018', '7 : 32 AM', '05/25/2018', '7 : 32 AM', 'ra', 'as', 'Trip', 'fahad@gmail.com', 2147483647, 1, 'cho- 301294', 21, 1, 1),
-(50, 'ibtihaj ahmed', 'fahad', 'cse', 'car', '07/09/2018', '8 : 55 PM', '07/10/2018', '8 : 55 PM', 'kajla', 'kajla', 'emni', 'fahad@gmail.com', 2147483647, 1, 'ga-259723', 20, 1, 1),
-(51, 'ibtihaj ahmed', 'fahad', 'dd', 'car', '07/09/2018', '9 : 05 PM', '07/09/2018', '9 : 05 PM', 'dd', 'dd', 'dd', 'fahad@gmail.com', 0, 1, 'cho- 301294', 21, 1, 1),
-(54, 'test test', 'test', 'test', 'car', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test@gmail.com', 99984848, 1, 'cho- 301294', 21, 1, 1),
-(55, 'kevin kevin', 'kevin', 'e', 'bus', 'e', '', '102220', '102220', 'test', 'tests', 'test', 'kevin@gmail.com', 99787878, 1, 'cho- 301294', 21, 0, 1);
+INSERT INTO `booking` (`booking_id`, `name`, `username`, `type`, `req_date`, `req_time`, `ret_date`, `ret_time`, `destination`, `pickup_point`, `resons`, `email`, `mobile`, `confirmation`, `veh_reg`, `driverid`, `finished`, `paid`) VALUES
+(56, 'vimarshana bandara', 'vimarshana', 'bus', '07/14/2021', '8 : 56 PM', '07/16/2021', '8 : 56 PM', 'Jaffna', 'Kandy', 'Annual Trip', 'vimarshanabandara@gmail.com', 766226030, 1, '001 - NB-7788', 22, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -131,8 +124,7 @@ CREATE TABLE `driver` (
 --
 
 INSERT INTO `driver` (`driverid`, `drname`, `drjoin`, `drmobile`, `drnid`, `drlicense`, `drlicensevalid`, `draddress`, `drphoto`, `dr_available`) VALUES
-(20, 'fahim', '03/04/2018', '01717172398712', '91238912093097812', '1093q098091839', '03/26/2018', ' creasent road, dhaka, bangladesh.', 'nsf.jpg', 1),
-(21, 'Arman', '03/04/2018', '0123084982', 'kls3893809839082', '1093q098091839', '03/04/2018', ' Oktroy Mor, Rajshahi.', 'rkb.jpg', 1);
+(22, 'Kusal Mendis', '09/09/2020', '0716274150', '970480045V', 'B38154785', '07/31/2024', ' Moratuwa', '76729750.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -183,11 +175,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `username`, `password`, `admin`) VALUES
-(10, 'ibtihaj', 'ahmed', 'fahad@gmail.com', 'fahad', 'asdasd', 0),
-(13, 'dad', 'ahmed', 'fahaha@gmail.com', 'asdasd', 'asdasdad', 0),
-(14, 'rakibul', 'hoque', 'rakib@gmail.com', 'rakib24', '1234', 0),
-(15, 'test', 'test', 'test@gmail.com', 'test', 'test', 0),
-(16, 'kevin', 'kevin', 'kevin@gmail.com', 'kevin', 'kevin', 0);
+(17, 'vimarshana', 'bandara', 'vimarshanabandara@gmail.com', 'vimarshana', 'vima1234', 0);
 
 -- --------------------------------------------------------
 
@@ -199,7 +187,6 @@ CREATE TABLE `vehicle` (
   `veh_id` int(11) NOT NULL,
   `veh_reg` varchar(100) NOT NULL,
   `veh_type` varchar(20) NOT NULL,
-  `chesisno` varchar(100) NOT NULL,
   `brand` varchar(100) NOT NULL,
   `veh_color` varchar(100) NOT NULL,
   `veh_regdate` varchar(100) NOT NULL,
@@ -212,10 +199,8 @@ CREATE TABLE `vehicle` (
 -- Dumping data for table `vehicle`
 --
 
-INSERT INTO `vehicle` (`veh_id`, `veh_reg`, `veh_type`, `chesisno`, `brand`, `veh_color`, `veh_regdate`, `veh_description`, `veh_photo`, `veh_available`) VALUES
-(25, 'ga-259723', 'car', '101-12303.20201', 'corolla', 'Black', '25/03.17', 'hello this is a black car.', '1.jpg', 1),
-(26, 'cho- 301294', 'car', '101-12309.23981', 'axio', 'white', '26.9.15', ' hello this is a white car. ', '2.jpg', 1),
-(35, 'go-190312', 'car', '101321-138713.3291823', 'Corolla', 'Red', '10/17/2017', ' This is a red car.', 'images.jpg', 1);
+INSERT INTO `vehicle` (`veh_id`, `veh_reg`, `veh_type`, `brand`, `veh_color`, `veh_regdate`, `veh_description`, `veh_photo`, `veh_available`) VALUES
+(36, '001 - NB-7788', 'bus', 'Leyland', 'White', '07/10/2021', ' Leyland Bus', 'BUS 01.jpg', 0);
 
 --
 -- Indexes for dumped tables
@@ -283,13 +268,13 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `driver`
 --
 ALTER TABLE `driver`
-  MODIFY `driverid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `driverid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tripcost`
@@ -301,13 +286,13 @@ ALTER TABLE `tripcost`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `veh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `veh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
